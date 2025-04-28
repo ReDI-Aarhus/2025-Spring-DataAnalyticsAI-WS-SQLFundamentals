@@ -37,24 +37,24 @@
   . On your repo page click the green **Code** button ![alt text](Code.png) and choose “Open with VS Code”  
   . VS Code will open and clone automatically
 
-- Create & Switch Branch in VS Code  
+2. Create & Switch Branch in VS Code  
   . In the bottom-left select branch indicator and create a new branch 
     . ![alt text](branch.png)  
   . Enter a branch name and hit **Enter**
     . ![alt text](newbranch.png)
 
-- Commit in VS Code & Push  
+3. Commit in VS Code & Push  
   . Edit files in the editor  
   . In Source Control view stage your changes
     . ![alt text](sourcecontrol.png)  
   . Add a commit message and click ✔️ **Commit and Push**
     . ![alt text](commitandpush.png)
 
-- Start PR from VS Code  
+4. Start PR from VS Code  
   . After push, click the **Create Pull Request** notification  
   . Fill in title/description and hit **Create**  
   . This opens your PR in the browser
 
-- Merge & Clean Up  
+5. Merge & Clean Up  
   . In the GitHub PR page click **Merge pull request**  
   . Choose **Delete branch** to tidy up
