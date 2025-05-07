@@ -15,7 +15,7 @@ SELECT 'JAcob Ross Andersel'
 -- Hint: 
 --=======================================
 -- Your query here
-
+SELECT 599+1
 
 --=======================================
 -- Topic: SELECT Basics
@@ -24,6 +24,8 @@ SELECT 'JAcob Ross Andersel'
 --=======================================
 -- Your query here
 
+SELECT *
+FROM [SalesLT].[Product]
 
 --=======================================
 -- Topic: SELECT Basics
@@ -32,6 +34,12 @@ SELECT 'JAcob Ross Andersel'
 --=======================================
 -- Your query here
 
+SELECT 
+      FirstName
+    , LastName
+    , FirstName + ' ' + LastName AS 'FullName'
+    ,  EmailAddress
+FROM SalesLT.Customer
 
 --=======================================
 -- Topic: Using Distinct
@@ -40,14 +48,21 @@ SELECT 'JAcob Ross Andersel'
 --=======================================
 -- Your query here
 
-
+SELECT DISTINCT
+    Color
+FROM SalesLT.Product
 --=======================================
 -- Topic: Filtering with WHERE
 -- Task: Find all products that cost more than $1,000.
 -- Hint: Use WHERE with ListPrice
 --=======================================
 -- Your query here
-
+SELECT 
+    ProductID
+    , p.Name AS ProductName
+    , ListPrice 
+FROM SalesLT.Product AS p
+WHERE ListPrice > 1000
 
 --=======================================
 -- Topic: Sorting with ORDER BY
@@ -56,5 +71,20 @@ SELECT 'JAcob Ross Andersel'
 --=======================================
 -- Your query here
 
+SELECT TOP 10
+    ProductID
+    , p.Name AS ProductName
+    , ListPrice
+FROM SalesLT.Product AS p
+ORDER BY ListPrice DESC
 
 --=======================================
+
+SELECT *
+FROM SalesLT.Product AS p
+FULL OUTER JOIN SalesLT.SalesOrderDetail AS soh
+ON soh.ProductID = p.ProductID
+
+SELECT COALESCE(NULL,'FirstTHing')
+SELECT COALESCE('bad','FirstTHing')
+SELECT ISNULL(NULL,'bad')
