@@ -15,6 +15,7 @@ SELECT 'Ramia Elansari'
 -- Hint: 
 --=======================================
 -- 
+SELECT 599+1
 
 
 --=======================================
@@ -23,14 +24,18 @@ SELECT 'Ramia Elansari'
 -- Hint: Use SELECT *
 --=======================================
 --
-
+SELECT * FROM SalesLT.Product
 
 --=======================================
 -- Topic: SELECT Basics
 -- Task: Retrieve the FirstName, LastName, and EmailAddress of all customers.
 -- Hint: Use SELECT with FROM SalesLT.Customer
 --=======================================
--- Your query here
+-- Your query here 
+SELECT FirstName
+,LastName
+,EmailAddress
+ FROM SalesLT.Customer
 
 
 --=======================================
@@ -39,6 +44,7 @@ SELECT 'Ramia Elansari'
 -- Hint: Use DISTINCT
 --=======================================
 -- Your query here
+ SELECT DISTINCT Color FROM SalesLT.Product
 
 
 --=======================================
@@ -47,7 +53,11 @@ SELECT 'Ramia Elansari'
 -- Hint: Use WHERE with ListPrice
 --=======================================
 -- Your query here
-
+SELECT ProductID 
+,Name AS ProductName
+,ListPrice
+FROM SalesLT.Product
+WHERE ListPrice > 1000
 
 --=======================================
 -- Topic: Sorting with ORDER BY
@@ -55,6 +65,17 @@ SELECT 'Ramia Elansari'
 -- Hint: Use ORDER BY (DESC) + TOP clause
 --=======================================
 -- Your query here
-
+SELECT TOp 10
+ProductID 
+,p.Name AS ProductName
+,ListPrice
+FROM SalesLT.Product AS p
+ORDER By ListPrice DESC
 
 --=======================================
+SELECT *
+FROM SalesLT.Product AS P
+FULL OUTER JOIN SalesLT.SalesOrderDetail AS s 
+On p.ProductID = s.ProductID
+SELECT COALESCE (NULL, 'FirstTHing')
+SELECT COALESCE ('bad', 'FirstTHing')
