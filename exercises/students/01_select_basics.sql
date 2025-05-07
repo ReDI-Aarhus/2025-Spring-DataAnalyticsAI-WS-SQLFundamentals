@@ -6,7 +6,7 @@
 -- Hint: Use '' (single quotes) for text e.g. 'Joe'
 --=======================================
 -- Your query here
-Select 'Elena'
+SELECT 'Elena' AS Name
 
 --=======================================
 -- Topic: SELECT Basics
@@ -14,7 +14,7 @@ Select 'Elena'
 -- Hint: 
 --=======================================
 -- Your query here
-
+SELECT 599 + 1 AS Sum
 
 --=======================================
 -- Topic: SELECT Basics
@@ -22,7 +22,8 @@ Select 'Elena'
 -- Hint: Use SELECT *
 --=======================================
 -- Your query here
-
+SELECT * 
+FROM SalesLT.Product
 
 --=======================================
 -- Topic: SELECT Basics
@@ -30,7 +31,12 @@ Select 'Elena'
 -- Hint: Use SELECT with FROM SalesLT.Customer
 --=======================================
 -- Your query here
-
+SELECT TOP 5 
+    FirstName, 
+    LastName,
+    FirstName + ' ' + LastName AS FullName, 
+    EmailAddress
+FROM SalesLT.Customer    
 
 --=======================================
 -- Topic: Using Distinct
@@ -38,7 +44,9 @@ Select 'Elena'
 -- Hint: Use DISTINCT
 --=======================================
 -- Your query here
-
+SELECT DISTINCT 
+    Color
+FROM SalesLT.Product
 
 --=======================================
 -- Topic: Filtering with WHERE
@@ -46,7 +54,12 @@ Select 'Elena'
 -- Hint: Use WHERE with ListPrice
 --=======================================
 -- Your query here
-
+SELECT 
+    ProductID, 
+    Name AS ProductName, 
+    ListPrice AS Price
+FROM SalesLT.Product AS P
+WHERE ListPrice > 1000
 
 --=======================================
 -- Topic: Sorting with ORDER BY
@@ -54,6 +67,17 @@ Select 'Elena'
 -- Hint: Use ORDER BY (DESC) + TOP clause
 --=======================================
 -- Your query here
-
+SELECT TOP 10 *
+FROM SalesLT.Product
+ORDER BY ListPrice DESC
 
 --=======================================
+
+SELECT *
+FROM SalesLT.Product as p
+FULL OUTER JOIN SalesLT.SalesOrderHeader as soh
+ON soh.ProductID = p.ProductID
+
+SELECT COALESCE(NULL, 'FirstName')
+SELECT COALESCE('bad', 'FirstName')
+SELECT ISNULL('bad', 'FirstName')
