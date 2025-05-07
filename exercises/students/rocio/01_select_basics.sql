@@ -6,7 +6,7 @@
 -- Hint: Use '' (single quotes) for text e.g. 'Joe'
 --=======================================
 -- Your query here
-
+SELECT 'Rocio' AS Name;
 
 
 --=======================================
@@ -15,7 +15,7 @@
 -- Hint: 
 --=======================================
 -- Your query here
-
+SELECT 599 + 1 AS Result;
 
 --=======================================
 -- Topic: SELECT Basics
@@ -23,7 +23,8 @@
 -- Hint: Use SELECT *
 --=======================================
 -- Your query here
-
+SELECT* 
+FROM SalesLT.product
 
 --=======================================
 -- Topic: SELECT Basics
@@ -31,6 +32,11 @@
 -- Hint: Use SELECT with FROM SalesLT.Customer
 --=======================================
 -- Your query here
+SELECT 
+        FirstName
+      , LastName
+      , EmailAddress 
+FROM SalesLT.Customer
 
 
 --=======================================
@@ -39,7 +45,9 @@
 -- Hint: Use DISTINCT
 --=======================================
 -- Your query here
-
+SELECT DISTINCT 
+    Color 
+FROM SalesLT.Product
 
 --=======================================
 -- Topic: Filtering with WHERE
@@ -47,6 +55,14 @@
 -- Hint: Use WHERE with ListPrice
 --=======================================
 -- Your query here
+SELECT 
+   ProductID
+   , p.Name AS ProductName
+   , ListPrice ListCost
+FROM [SalesLT].[Product] AS p
+WHERE ListPrice>1000
+
+
 
 
 --=======================================
@@ -55,6 +71,14 @@
 -- Hint: Use ORDER BY (DESC) + TOP clause
 --=======================================
 -- Your query here
-
+SELECT top 10
+    ProductID
+    , Name AS ProductName
+    , ListPrice
+FROM SalesLT.Product
+ORDER BY ListPrice
+  
 
 --=======================================
+SELECT COALESCE(NULL,'FirsThing')
+SELECT COALESCE ('bad','FirsThing')
