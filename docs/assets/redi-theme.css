@@ -1,0 +1,36 @@
+/* redi-theme.css */
+
+/*
+ * @theme redi
+
+ */
+
+ @import 'default';
+
+ section {
+   font-family: 'Open Sans', sans-serif;
+   background-color: hsla(195, 50%, 96.86%, 1);
+   color: #003b4a; /* A deep teal for contrast */
+   font-family: 'Segoe UI', sans-serif;
+   padding: 2em;
+
+ }
+ 
+ h1, h2, h3 {
+   color: #0056b3;
+ }
+ 
+ ul {
+   list-style-type: square;
+   padding-left: 1.5em;
+ }
+ 
+ li {
+   font-size: 22px;
+   line-height: 1.5;
+   margin-bottom: 0.3em;
+ }
+ 
+ li::marker {
+   color: #0056b3;
+ }
