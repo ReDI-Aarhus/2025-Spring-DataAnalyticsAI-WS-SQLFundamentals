@@ -6,7 +6,8 @@
 -- Hint: Use '' (single quotes) for text e.g. 'Joe'
 --=======================================
 
-SELECT 'Stephanie' AS Name;
+SELECT 
+    'Stephanie' AS Name;
 
 
 --=======================================
@@ -15,7 +16,8 @@ SELECT 'Stephanie' AS Name;
 -- Hint: 
 --=======================================
 
-SELECT 599 + 1 AS Result;
+SELECT 
+    599 + 1 AS Result;
 
 --=======================================
 -- Topic: SELECT Basics
@@ -35,9 +37,15 @@ FROM SalesLT.Product;
 --=======================================
 
 SELECT 
-        FirstName + ' ' + LastName AS 'FullName'
-        , LastName
-        , EmailAddress 
+    FirstName
+    , LastName
+    , EmailAddress 
+FROM SalesLT.Customer;
+
+-- another example to combine first and last name
+SELECT 
+    FirstName + ' ' + LastName AS 'FullName'
+    , EmailAddress 
 FROM SalesLT.Customer;
 
 --=======================================
