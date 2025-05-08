@@ -70,3 +70,6 @@ SELECT top 10
 FROM SalesLT.Product
 ORDER BY ListPrice
 --=======================================
+
+SELECT COALESCE(NULL, 'FirstThing')
+SELECT COALESCE('bad', 'FirstThing')
