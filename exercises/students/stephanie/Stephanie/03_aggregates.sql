@@ -37,7 +37,8 @@ FROM [SalesLT].[SalesOrderHeader] AS soh
 GROUP BY soh.CustomerID -- GROUP BY groups the result set by CustomerID
 
 -- I get the same, OrderCount = 1
-
+SELECT * 
+FROM [SalesLT].[SalesOrderHeader]
 --=======================================
 -- Topic: Aliases and Formatting
 -- Task: Display product names and prices, rename the columns to "Product" and "Price".
