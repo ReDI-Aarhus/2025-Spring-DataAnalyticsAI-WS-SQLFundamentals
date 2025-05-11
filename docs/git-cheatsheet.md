@@ -8,9 +8,9 @@ The repository is organized like this:
 
 ```
 Root/
-└── Exercises/
-    └── Students/
-        └── YourName/
+└── exercises/
+    └── students/
+        └── your-name-here/ (<- rename this folder to your name!)
             ├── 01_select_basics.sql
             ├── 02-joins.sql
             ├── 03-aggregates.sql
@@ -29,7 +29,7 @@ Each student creates a new branch for each exercise. Branches are named like thi
 
 Examples:
 
-* `alice/01_select_basics`
+* `alice/01_select`
 * `bob/02-joins`
 
 ## 🚀 Getting Started
@@ -43,27 +43,24 @@ git clone https://github.com/ReDI-Aarhus/2025-Spring-DataAnalyticsAI-WS-SQLFunda
 cd C:\Repos\sql-workshop
 ```
 Open the folder in VS Code
-### 2. Create Your First Branch
+### 2. Create Your Branch
 
-Replace `yourname` with your name:
+First, rename `your-name-here` folder with your name.
+Then create your branch using the 
 
 ```bash
 git checkout -b yourname/01-select
 ```
 
-### 3. Create Your Exercise File
+### 3. Complete Exercise & Save
 
-```bash
-mkdir -p students/yourname
-cd students/yourname
-touch 01_select_basics.sql
-```
+Ideally, work inside the the .sql file associated with the branch name. Also if you are practicing something outside the scope of the exercise. 
 
 ### 4. Add, Commit, and Push
 
 ```bash
-git add students/yourname/01_select_basics.sql
-git commit -m "yourname - SELECT basics"
+git add .
+git commit -m "Completed SELECT basics exercise"
 git push -u origin yourname/01-select
 ```
 
@@ -73,7 +70,6 @@ Repeat this for each new task:
 
 ```bash
 git checkout -b yourname/02-joins
-# create and commit new SQL file in your folder
 ```
 
 ## 🔄 Switching Between Branches
@@ -82,12 +78,78 @@ git checkout -b yourname/02-joins
 git checkout yourname/01-select
 ```
 
-## 📥 Fetching Updates from GitHub
+
+
+## 🧪 Keeping Your Assignment Branch Up to Date with `main`
+
+When the `main` branch is updated (e.g., with new starter code, bug fixes, or test cases), you should **update your own current branch** so you're working with the latest changes. 
+
+This guide shows you how to **safely bring updates from `main` into your own branch** (e.g., `yourname/03-aggregates`).
+
+---
+
+### ✅ Steps to Rebase Your Branch with `main`
+
+Run these commands in your terminal:
 
 ```bash
+# Step 1: Save your work
+git status    # Make sure everything is committed
+
+# Step 2: Get the latest changes from GitHub
 git fetch origin
-git checkout yourname/03-order
-git pull origin yourname/03-order
+
+# Step 3: Update your local main branch
+git checkout main
+git pull origin main
+
+# Step 4: Switch back to your feature/assignment branch
+git checkout yourname/03-aggregates
+
+# Step 5: Rebase your work on top of the latest main
+git rebase main
 ```
+
+---
+
+### 🧩 If You See a Conflict During Rebase
+
+Git will pause and ask you to fix the files that conflict.
+
+1. Open the conflicting file(s), and choose how to combine the changes.
+
+2. After fixing each conflict, mark it resolved:
+
+   ```bash
+   git add <filename>
+   ```
+
+3. Then continue the rebase:
+
+   ```bash
+   git rebase --continue
+   ```
+
+Repeat until all conflicts are resolved.
+
+---
+
+### 🚀 Finally, Push Your Changes Back to GitHub
+
+After rebasing, you need to push your changes:
+
+```bash
+git push --force-with-lease
+```
+
+> ⚠️ This is safe **only if you're the only one working on your branch.**
+
+---
+
+### 💡 Why Rebase?
+
+* Keeps your branch history clean
+* Makes it look like you started from the latest version of `main`
+* Avoids messy merge commits
 
 

@@ -2,7 +2,7 @@
 -- Exercise 01: SELECT basics
 --=======================================
 -- Topic: SELECT Basics
--- Task: : Select your name
+-- Task: : Select 'your-name' 
 -- Hint: Use '' (single quotes) for text e.g. 'Joe'
 --=======================================
 -- Your query here

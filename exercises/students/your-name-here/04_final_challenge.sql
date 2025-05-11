@@ -4,12 +4,12 @@
 /*
 #### **Goal:**
 
-Create a report showing the top 5 customers (by total purchase amount) who placed orders in the year 2013, including their name, number of orders, and total spent.
+Create a report showing the top 5 customers (by total purchase amount) who placed orders in the year 2008, including their name, number of orders, and total spent.
 
 #### **Requirements:**
 
 1. Include customer full name.
-2. Only include orders from 2013.
+2. Only include orders from 2008.
 3. Show:
 
    * Number of orders placed.
