@@ -98,27 +98,49 @@ ORDER BY ...
 
 ## Git & SQL Workflow
 
-* Create branch per exercise: `yourname/01-select`
-* Work in `students/yourname/`
+* Create branch per exercise.
+* Work in `exercise/students/your-name-here/0x_xyz.sql` files
 * Use `git add`, `commit`, `push`
 
+
 ---
 
-## GitHub & Version Control Tips
-
-* Clone the repo and switch to your exercise branch.
-* Use `git pull` to sync updates.
-* Add changes using `git add`, commit with `git commit -m`, and push with `git push`.
+## GitHub & Version Control Process - First exercise
+Read: [git-cheatsheet.md](git-cheatsheet.md) in repos
+###### Main steps:
+* Clone the repo and create your exercise branch.
+* Rename `/<your-name-here>/` folder.
+* Work on exercise in dedicated .sql file: [01_select_basics.sql](../exercises/students/your-name-here/01_select_basics.sql)
+* Add changes using `git add`, commit with `git commit -m`, and push with `git push --set-upstream`.
 
 ```bash
-git checkout -b "01-select"
+# create branch
+git checkout -b "jane/01-select"
 # make your changes
 git add .
-git commit -m "Completed select exercise"
-git push origin "01-select"
-
+git commit -m "Completed 01_select exercise"
+git push --set-upstream origin "jane/01-select"
 ```
 ---
+## GitHub & Version Control Process - following exercises
+Read: [git-cheatsheet.md](git-cheatsheet.md) in repos
+###### Main steps:
+* Create your exercise branch.
+* Work on exercise in dedicated .sql file: [02_joins.sql](../exercises/students/your-name-here/02_joins.sql) 
+* Add changes using `git add`, commit with `git commit -m`, and push with `git push --set-upstream`.
+
+```bash
+# create branch
+git checkout -b "jane/02-joins"
+# make your changes
+git add .
+git commit -m "Completed 02_joins exercise"
+git push --set-upstream origin "jane/02_joins"
+```
+* Repeat for [03_aggregates.sql](../exercises/students/your-name-here/03_aggregates.sql) & [04_final_challenge.sql](../exercises/students/your-name-here/04_final_challenge.sql)
+
+---
+
 ## The basic SELECTs
 - SELECT
 - DISTINCT
@@ -463,4 +485,5 @@ Would you like a version with subqueries or CTEs for added challenge?
 * Azure SQL sample databases: [MS Docs](https://learn.microsoft.com/en-us/sql/samples/adventureworks-install-configure?view=sql-server-ver16&tabs=ssms)
 * SQL Style Guide: [sqlstyle.guide](https://www.sqlstyle.guide/)
 * JOIN Visualizer: [sql-joins.leopard.in.ua](https://sql-joins.leopard.in.ua/)
+* Practice site: [sqlpad.io](https://sqlpad.io/)
 

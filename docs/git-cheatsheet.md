@@ -61,7 +61,7 @@ Ideally, work inside the the .sql file associated with the branch name. Also if 
 ```bash
 git add .
 git commit -m "Completed SELECT basics exercise"
-git push -u origin yourname/01-select
+git push --set-upstream origin yourname/01-select
 ```
 
 ## ⏭️ Next Exercises
