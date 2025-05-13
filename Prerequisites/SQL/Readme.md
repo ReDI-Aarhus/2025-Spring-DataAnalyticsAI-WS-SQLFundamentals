@@ -1,4 +1,4 @@
-# 🛢️ SQL Prerequisites
+# 🛢️ SQL Prerequisites (Student)
 
 ## Install & Configure
 
@@ -27,3 +27,38 @@
    ```sql
    SELECT 1 AS Test;
    ```
+
+# Preparing SQL Database (Teacher)
+
+- **Create Azure SQL Database**
+  1. Use sample database: **AdventureWorksLT** 
+  2. Open Firewall to classroom IP ranges 
+      - (or allow all IPs: 0.0.0.0 - 255.255.255.255 )
+  3. Create student login(s):
+      ```sql
+      -- Sample script to create user 
+      -- =============================
+
+      -- Step1: Create login & user
+      -- Repeat step 1 for every additional user except "CREATE ROLE".
+
+      -- In Master db: Create login
+      CREATE LOGIN student01 WITH PASSWORD = 'StrongPassword!123';
+
+      -- In sample db: Create user (name = login)
+      CREATE USER student01 FOR LOGIN student01;
+
+      -- In sample db: Create role
+      CREATE ROLE student;
+      
+      -- In sample db: Add user to the role
+      EXEC sp_addrolemember 'student', 'student01';
+
+      -- =============================
+      
+      -- Step 2: Grant minimal, safe permissions to role
+
+      GRANT SELECT TO student;
+      GRANT CREATE VIEW TO student;
+
+      ````
