@@ -1,4 +1,4 @@
-# GitHub prerequisities
+# GitHub Prerequisities
 
 ## Option A: Using GitBash
 
@@ -17,17 +17,17 @@
   - Commit changes: `git commit -m "Short, descriptive message"`
 
 ### 4. Push branch to GitHub  
-  . `git push --set-upstream origin feature/my-change`
+  - `git push --set-upstream origin feature/my-change`
 
 ### 5. Create a Pull Request  
-  . (Option 1: Web) Visit your repo, click **Compare & pull request** button
-  . (Option 2: CLI with GitHub CLI), `gh pr create --fill`
+  - (Option 1: Web) Visit your repo, click **Compare & pull request** button
+  - (Option 2: CLI with GitHub CLI), `gh pr create --fill`
 
 ### 6. Merge & clean up  
-  . (Option 1: Web) Click **Merge pull request**, then **Delete branch**  
-  . (Option 2: CLI with GitHub CLI)  
-   . `gh pr merge --merge`  
-   . `gh pr delete <PR-number>` (or `git push origin --delete feature/my-change`)
+  - (Option 1: Web) Click **Merge pull request**, then **Delete branch**  
+  - (Option 2: CLI with GitHub CLI)  
+    - `gh pr merge --merge`  
+    - `gh pr delete <PR-number>` (or `git push origin --delete feature/my-change`)
 
   ***
 
@@ -63,3 +63,13 @@
 ### 6. Clean up 
   - Sync newest version of main to local Repository
   - Delete working Branch
+
+***
+## Data Flowchart
+This flowchart is illustrating the general Git workflow process in VS Code and GitHub. The chart is divided into two sections: VS Code and GitHub. 
+
+Colour-coded shapes: 
+- blue rectangles for branches
+- green parallelograms for actions
+- red diamonds for decisions. 
+![alt text](Assets/DataFlow_Test02.drawio.png)
