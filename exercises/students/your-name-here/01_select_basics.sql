@@ -6,7 +6,7 @@
 -- Hint: Use '' (single quotes) for text e.g. 'Joe'
 --=======================================
 -- Your query here
-
+SELECT 'SUSHMA'
 
 --=======================================
 -- Topic: SELECT Basics
@@ -14,6 +14,7 @@
 -- Hint: 
 --=======================================
 -- Your query here
+SELECT 599 + 1
 
 
 --=======================================
@@ -22,7 +23,9 @@
 -- Hint: Use SELECT *
 --=======================================
 -- Your query here
-
+SELECT *
+FROM SalesLT.Product
+--*selects all columns
 
 --=======================================
 -- Topic: SELECT Basics
@@ -30,7 +33,8 @@
 -- Hint: Use SELECT with FROM SalesLT.Customer
 --=======================================
 -- Your query here
-
+SELECT FirstName, LastName, EmailAddress
+FROM SalesLT.Customer
 
 --=======================================
 -- Topic: Using Distinct
@@ -38,7 +42,8 @@
 -- Hint: Use DISTINCT
 --=======================================
 -- Your query here
-
+SELECT DISTINCT Color
+FROM SalesLT.Product
 
 --=======================================
 -- Topic: Filtering with WHERE
@@ -46,7 +51,9 @@
 -- Hint: Use WHERE with ListPrice
 --=======================================
 -- Your query here
-
+SELECT *
+FROM SalesLT.Product
+WHERE ListPrice > 1000
 
 --=======================================
 -- Topic: Sorting with ORDER BY
@@ -54,6 +61,9 @@
 -- Hint: Use ORDER BY (DESC) + TOP clause
 --=======================================
 -- Your query here
-
+SELECT TOP 10
+    *
+FROM SalesLT.Product
+ORDER BY ListPrice DESC
 
 --=======================================
