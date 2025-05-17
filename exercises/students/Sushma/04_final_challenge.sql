@@ -32,6 +32,14 @@ Create a report showing the top 5 customers (by total purchase amount) who place
 */
 --=======================================
 -- Your query here
-
-
+SELECT FirstName + ' ' + LastName AS CustomerName, COUNT(SalesOrderID) AS OrderCount, SUM(TotalDue) AS TotalSpent
+FROM SalesLT.Customer
+   INNER JOIN SalesLT.SalesOrderHeader
+   ON SalesLT.Customer.CustomerID = SalesLT.SalesOrderHeader.CustomerID
+WHERE YEAR(OrderDate) = 2008
+GROUP BY FirstName, LastName
+ORDER BY TotalSpent DESC
+OFFSET 0 ROWS
+FETCH NEXT 5 ROWS ONLY
+--I took help from ChatGPT. but I understood.
 --=======================================
