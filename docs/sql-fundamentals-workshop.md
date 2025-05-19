@@ -1,8 +1,36 @@
 ---
 marp: true
-theme: redi
+theme: default
 paginate: true
 ---
+
+<style>
+section {
+    font-family: 'Open Sans', sans-serif;
+    background-color: hsla(195, 50%, 96.86%, 1);
+    color: #003b4a; /* A deep teal for contrast */
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 2em;
+    padding: 30px;
+}
+h1, h2, h3 {
+   color: #0056b3;
+ }
+ ul {
+   list-style-type: square;
+   padding-left: 1.5em;
+ }
+ 
+ li {
+   font-size: 22px;
+   line-height: 1.5;
+   margin-bottom: 0.3em;
+ }
+ 
+ li::marker {
+   color: #0056b3;
+ }
+</style>
 
 # SQL Fundamentals Workshop
 
@@ -73,7 +101,7 @@ A **database** is a structured collection of data stored electronically. It's us
 
 ## SQL Query Structure vs Logical Order
 
-#### What we write:
+### What we write:
 
 ```sql
 SELECT ...
@@ -84,8 +112,7 @@ HAVING ...
 ORDER BY ...
 ```
 
-#### How SQL logically evaluates:
-
+### How SQL logically evaluates:
 1. FROM
 2. WHERE
 3. GROUP BY

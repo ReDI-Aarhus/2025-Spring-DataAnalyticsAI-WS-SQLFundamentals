@@ -36,13 +36,54 @@ Examples:
 
 ### 1. Clone the Repository
 
-Create a local folder path like: C:\Repos\sql-workshop
+Simple approach:
 
 ```bash
+# Step 1: Create the directory if it doesn't exist. You can also do this manually in file explorer
+mkdir -p /c/repos/sql-workshop
+
+# Step 2: Navigate into the base directory where you want to store your repos
+cd /c/repos/sql-workshop
+
+# Step 3: Clone the GitHub repository into this directory
 git clone https://github.com/ReDI-Aarhus/2025-Spring-DataAnalyticsAI-WS-SQLFundamentals.git
-cd C:\Repos\sql-workshop
+
+# Step 4: Navigate into the newly cloned repository folder
+cd 2025-Spring-DataAnalyticsAI-WS-SQLFundamentals
+
+# Step 5: Open the current folder in Visual Studio Code
+code .
+
 ```
 Open the folder in VS Code
+
+Here's a more dynamic version designed for re-use:
+```Bash
+# Step 1: Set your base directory for all repos. 
+BASE_DIR="/c/repos/redi"
+
+# Step 2: Define the GitHub repo URL (change this to any repo)
+REPO_URL="https://github.com/ReDI-Aarhus/2025-Spring-DataAnalyticsAI-WS-SQLFundamentals.git"
+
+# Step 3: Extract the repo name from the URL (remove .git and everything before last '/')
+REPO_NAME=$(basename -s .git "$REPO_URL")
+
+# Step 4: Create the base directory if it doesn't exist
+mkdir -p "$BASE_DIR"
+
+# Step 5: Go to base directory
+cd "$BASE_DIR"
+
+# Step 6: Clone the repo
+git clone "$REPO_URL"
+
+# Step 7: Navigate into the cloned repo
+cd "$REPO_NAME"
+
+# Step 8: Open the folder in VS Code
+code .
+
+```
 ### 2. Create Your Branch
 
 First, rename `your-name-here` folder with your name.
