@@ -32,6 +32,16 @@ Create a report showing the top 5 customers (by total purchase amount) who place
 */
 --=======================================
 -- Your query here
-
+SELECT 
+    CONCAT(c.FirstName, ' ', c.LastName) AS CustomerName,
+    COUNT(o.SalesOrderID) AS OrderCount,
+    SUM(o.TotalDue) AS TotalSpent
+FROM SalesLT.Customer c
+JOIN SalesLT.SalesOrderHeader o
+    ON c.CustomerID = o.CustomerID
+WHERE YEAR(o.OrderDate) = 2008
+GROUP BY c.FirstName, c.LastName
+ORDER BY TotalSpent DESC
+OFFSET 0 ROWS FETCH NEXT 5 ROWS ONLY;
 
 --=======================================
