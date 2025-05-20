@@ -6,7 +6,9 @@
 -- Hint: Use GROUP BY CustomerID and COUNT(*)
 --=======================================
 -- Your query here
-
+SELECT CustomerID, COUNT(*) AS OrderCount
+FROM SalesLT.SalesOrderHeader
+GROUP BY CustomerID
 
 --=======================================
 -- Topic: SUM + Aliases and Formatting
@@ -14,7 +16,9 @@
 -- Hint: Use "SUM" and use "AS" to rename columns.
 --=======================================
 -- Your query here
-
+SELECT CustomerID, COUNT(*) AS OrderCount, SUM(TotalDue) AS TotalSales
+FROM SalesLT.SalesOrderHeader
+GROUP BY CustomerID
 
 --=======================================
 -- Topic: Aliases and Formatting
@@ -22,7 +26,8 @@
 -- Hint: Use "AS" to rename columns
 --=======================================
 -- Your query here
-
+SELECT Name AS Product, ListPrice AS Price
+FROM SalesLT.Product
 
 --=======================================
 -- Topic: Filter with HAVING
@@ -30,6 +35,10 @@
 -- Hint: Use "AVG" both in SELECT and in filter
 --=======================================
 -- Your query here
-
+SELECT Color, AVG(ListPrice) AS AvgPrice
+FROM SalesLT.Product
+WHERE Color IS NOT NULL
+GROUP BY Color
+HAVING AVG(ListPrice) > 500
 
 --=======================================
